@@ -122,7 +122,7 @@ mod tests {
 	}
 
 	#[cfg(test)]
-	mod empty_line{
+	mod empty_line {
 		use crate::parsing::utils::parse_empty_line;
 		use yapcol::Input;
 

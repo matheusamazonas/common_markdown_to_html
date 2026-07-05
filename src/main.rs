@@ -1,9 +1,10 @@
-use crate::parsing::parse;
+use crate::conversion::convert;
 use std::io;
-use yapcol::Input;
 
 mod blocks;
+mod conversion;
 mod parsing;
+mod printing;
 
 fn main() {
 	let stdin = io::stdin();
@@ -14,13 +15,10 @@ fn main() {
 		input.clear();
 		match stdin.read_line(input) {
 			Ok(_) if input.len() == 2 && input.starts_with('q') => break,
-			Ok(_) => {
-				let mut input = Input::new_from_chars(input.chars(), Some("stdin".to_string()));
-				match parse(&mut input) {
-					Ok(m) => println!("Success: {:?}", m),
-					Err(e) => println!("Failed to parse markdown: {e}"),
-				}
-			}
+			Ok(_) => match convert(input.chars(), Some("stdin".to_string())) {
+				Ok(html) => println!("Success: {:?}", html),
+				Err(e) => println!("Failed to parse markdown: {e}"),
+			},
 			Err(_) => println!("Failed to read input."),
 		}
 	}

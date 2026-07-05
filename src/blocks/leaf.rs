@@ -1,4 +1,4 @@
 #[derive(Debug, PartialEq)]
-pub enum LeafBlock {
+pub enum Leaf {
 	ThematicBreak,
 }
