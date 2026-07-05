@@ -29,6 +29,6 @@ where
 	for block_html in blocks_html {
 		output.push_str(&block_html);
 		output.push('\n');
-	} 
+	}
 	output
 }

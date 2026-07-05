@@ -1,7 +1,7 @@
 use crate::blocks::Block;
 use crate::blocks::leaf::Leaf;
 use crate::parsing::thematic_break::parse_thematic_break;
-use yapcol::{CharToken, Error, Input, Parser, StringParser};
+use yapcol::{CharToken, Error, Input, StringParser};
 
 pub(crate) trait LeafBlockParser: StringParser<Leaf> {}
 
