@@ -1,6 +1,15 @@
 [package]
 name = "common_markdown_to_html"
+description = "A Markdown parser and HTML converter"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+authors = ["Matheus Amazonas"]
+readme = "README.md"
+homepage = "https://github.com/matheusamazonas/common_markdown_to_html"
+repository = "https://github.com/matheusamazonas/common_markdown_to_html"
+categories = ["encoding", "parser-implementations"]
+keywords = ["markdown", "parser", "to", "html", "convert"]
 
 [dependencies]
+yapcol = "0.5.0"
