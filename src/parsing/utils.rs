@@ -6,10 +6,10 @@ impl<T> EmptyParser for T where T: StringParser<()> {}
 
 pub(crate) fn parse_spaces_or_tabs() -> impl EmptyParser {
 	|input| {
-		let space = is(' ');
-		let tab = is('\t');
-		let either = either(&space, &tab);
-		either.many().discard()(input)
+		let parse_space = is(' ');
+		let parse_tab = is('\t');
+		let parse_either = either(&parse_space, &parse_tab);
+		parse_either.once_or_more().discard()(input)
 	}
 }
 
@@ -60,9 +60,10 @@ mod tests {
 		use yapcol::{Input, end_of_input};
 
 		#[test]
-		fn empty_succeeds() {
+		fn empty_fails() {
 			let mut input = Input::new_from_chars("".chars(), None);
-			parse_spaces_or_tabs()(&mut input).unwrap();
+			let output = parse_spaces_or_tabs()(&mut input);
+			assert!(output.is_err());
 			end_of_input()(&mut input).unwrap();
 		}
 
