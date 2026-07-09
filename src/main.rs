@@ -5,7 +5,7 @@ mod blocks;
 mod conversion;
 mod parsing;
 mod printing;
-mod tests;
+mod spec_tests;
 
 fn main() {
 	let stdin = io::stdin();
