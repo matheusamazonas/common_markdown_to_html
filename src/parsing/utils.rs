@@ -24,6 +24,16 @@ pub(crate) fn line_end() -> impl EmptyParser {
 	}
 }
 
+pub(crate) fn not_line_end() -> impl StringParser<char> {
+	satisfy(|&c| {
+		if c == '\n' || c == '\r' {
+			None
+		} else {
+			Some(c)
+		}
+	})
+}
+
 pub(crate) fn empty_line() -> impl EmptyParser {
 	spaces_or_tabs().maybe().and(line_end())
 }
