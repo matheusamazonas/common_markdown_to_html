@@ -14,9 +14,9 @@ To write a Markdown parser that is CommonMark-compliant, along with an HTML conv
 | Backslash escapes                       | Not implemented ❌ |       0/13 |
 | Entity and numeric character references | Not implemented ❌ |       1/17 |
 | Precedence                              | Not implemented ❌ |        0/1 |
-| Thematic breaks                         | Implemented ✅     |      12/19 |
+| Thematic breaks                         | Implemented ✅     |      13/19 |
 | ATX headings                            | Implemented ✅     |      13/18 |
-| Setext headings                         | Not implemented ❌ |       2/27 |
+| Setext headings                         | Not implemented ❌ |       4/27 |
 | Indented code blocks                    | Not implemented ❌ |       1/12 |
 | Fenced code blocks                      | Not implemented ❌ |       0/29 |
 | HTML blocks                             | Not implemented ❌ |       1/44 |
@@ -35,7 +35,7 @@ To write a Markdown parser that is CommonMark-compliant, along with an HTML conv
 | Hard line breaks                        | Not implemented ❌ |       8/15 |
 | Soft line breaks                        | Not implemented ❌ |      2/2 ✅ |
 | Textual content                         | Not implemented ❌ |      3/3 ✅ |
-| Total                                   |                   |    129/652 | 
+| **Total**                               |                   |    132/652 | 
 
 ## Dependencies
 Common Markdown to HTML has the following dependencies:

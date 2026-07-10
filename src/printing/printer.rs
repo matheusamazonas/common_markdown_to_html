@@ -1,6 +1,5 @@
-use crate::blocks::leaf::Leaf;
+use crate::blocks::leaf::{Leaf, ParagraphEnd};
 use crate::blocks::{Block, Container};
-use std::fmt::format;
 fn print_block(block: Block) -> String {
 	match block {
 		Block::LeafBlock(leaf) => print_leaf(leaf),
@@ -12,10 +11,14 @@ fn print_leaf(leaf: Leaf) -> String {
 	match leaf {
 		Leaf::ThematicBreak => String::from("<hr />"),
 		Leaf::ATXHeading(level, text) => format!("<h{}>{}</h{}>", level, text, level),
-		Leaf::Paragraph(lines) => {
+		Leaf::Paragraph(lines, end) => {
 			let lines: Vec<_> = lines.into_iter().map(|l| l.content()).collect();
 			let content = lines.join("\n");
-			format!("<p>{content}</p>")
+			if let ParagraphEnd::ThematicBreak = end {
+				format!("<p>{content}</p>\n<hr />")
+			} else {
+				format!("<p>{content}</p>")
+			}
 		}
 	}
 }
