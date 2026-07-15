@@ -12,4 +12,4 @@ categories = ["encoding", "parser-implementations"]
 keywords = ["markdown", "parser", "to", "html", "convert"]
 
 [dependencies]
-yapcol = "0.7.0"
+yapcol = "0.8.0"

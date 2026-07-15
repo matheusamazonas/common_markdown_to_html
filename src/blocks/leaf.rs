@@ -4,14 +4,6 @@ pub struct ParagraphLine {
 	hard_break: bool,
 }
 
-#[derive(Debug, PartialEq)]
-pub enum ParagraphEnd {
-	EndOfInput,
-	EmptyLine,
-	ThematicBreak,
-	ATXHeadingOpening(u8),
-}
-
 impl ParagraphLine {
 	pub fn new(content: String, hard_break: bool) -> Self {
 		ParagraphLine {
@@ -41,5 +33,5 @@ impl ParagraphLine {
 pub enum Leaf {
 	ThematicBreak,
 	ATXHeading(u8, String),
-	Paragraph(Vec<ParagraphLine>, ParagraphEnd),
+	Paragraph(Vec<ParagraphLine>),
 }

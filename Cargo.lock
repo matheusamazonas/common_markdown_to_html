@@ -11,6 +11,6 @@ dependencies = [
 
 [[package]]
 name = "yapcol"
-version = "0.7.0"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "81ce770a9733eebf14de8f5964261052bd2575c05ee5309b96045e82b002a08f"
+checksum = "db38d4969aaed9192be3660f472b81172e83ef12d688efae25fed18e7ac24b4f"
